@@ -1,26 +1,24 @@
-# Continuous Deployment using AWS Code Pipeline and S3
 
-This repo contains the code files used in this [YouTube video](https://youtu.be/biYVW1TMYAU).
+## Continuous Deployment using AWS Code Pipeline and S3
+# TL;DR
+I hosted the code for my game on GitHub. To streamline the deployment process, I created an S3 bucket for static website hosting and set up a continuous deployment pipeline using AWS CodePipeline. This pipeline automatically deploys any changes to the code whenever updates are made.
 
-## TL;DR
-Code for a game is hosted in GitHub.  We create an S3 bucket for static website hosting, then create a continuous deployment pipeline (using AWS Code Pipeline) to automatically deploy the code whenever changes are made.
+# The Game
+I created a simple memory matching game. The user clicks on two cards (each displaying meme images) in an attempt to match them. If the cards match, they disappear from the board; if not, they are flipped back over so the player can try again.
 
-## The Game
-A simple memory matching game.  The user clicks two cards (images of memes) to try to match them.  If there's a match, the cards disappear from the board.  If there's no match, the cards are flipped back to their blank side so the user can try again.
+The game is built with HTML, CSS, and JavaScript.
 
-The game consists of HTML, CSS and JavaScript.
+Here are a few ideas for additional features I’m considering:
 
-Ideas for additional features:
-- A scoring mechanism
-- A timer
-- Add additional cards
-- Multi-player capabilities so you can compare scores 
+-> Adding a scoring system
+-> Implementing a timer
+-> Expanding the game with more cards
+-> Introducing multi-player functionality to compare scores
+-> The Deployment Environment
+-> I decided to deploy and host the code on S3, using it for static website hosting.
 
-## The Deployment Environment
-The code will be deployed and hosted in S3.
+# The Deployment Pipeline
+I set up a continuous deployment pipeline with AWS CodePipeline. The pipeline pulls the latest code from my GitHub repository and automatically deploys it to S3 whenever there are changes.
 
-## The Deployment Pipeline
-The pipeline is created using AWS Code Pipeline.  The pipeline pulls the code from GitHub, and deploys it to S3 whenever a change is detected in the code.
-
-## Cost
-All services used are eligible for the [AWS Free Tier](https://aws.amazon.com/free/).  However, charges will incur at some point so it's recommended that you shut down resources after completing this tutorial.
+# Cost
+All of the AWS services I used are eligible for the AWS Free Tier. However, charges may apply after a certain usage threshold. I recommend shutting down resources when the tutorial is complete to avoid unnecessary charges.
